@@ -218,20 +218,20 @@
       }, 1500);
     }
 
-    function sendToGoogleSheets() {
-      fetch("https://script.google.com/macros/s/AKfycbx-n8awu_Ex1vauIjzo1K6eaDfEcpwMFjZ4BkObZ3y-5nWyM9LoRQOc9kTaIyR99Ek5/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          idType: selectedID,
-          frontImage: frontImageData,
-          backImage: backImageData
-        })
-      })
-      .then(res => res.text())
-      .then(data => console.log("✅ Submitted to Google Sheets:", data))
-      .catch(err => console.error("❌ Submission failed:", err));
-    }
-  </script>
+function sendToGoogleSheets() {
+  fetch("YOUR_SCRIPT_WEBAPP_URL_HERE", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      idType: selectedID,
+      frontImage: frontImageData,
+      backImage: backImageData
+    })
+  })
+  .then(res => res.text())
+  .then(data => console.log("✅ Submitted:", data))
+  .catch(err => console.error("❌ Failed:", err));
+}
+</script>
 </body>
 </html>
